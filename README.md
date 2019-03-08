@@ -1,4 +1,4 @@
-## Descripción de estructura (JSON) a enviar
+## Informacion
 
 ### Dte (Documento Tributario Electrónico)
 | Campo | Descripción | Obligatorio | Valor por defecto | Ejemplo (s) |
