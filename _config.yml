@@ -1,4 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
+permalink: pretty
+search_enabled: true
+color_scheme: nil
 plugins:
   - jekyll-relative-links
 relative_links:
