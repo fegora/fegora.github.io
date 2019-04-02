@@ -1,4 +1,4 @@
-theme: jekyll-theme-modernist
+theme: just-the-docs
 plugins:
   - jekyll-relative-links
 relative_links:
