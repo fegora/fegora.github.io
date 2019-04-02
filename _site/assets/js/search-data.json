@@ -1,0 +1,24 @@
+{
+  "0": {
+    "id": "0",
+    "title": "Autenticación",
+    "content": "Todas las llamadas al API son hechas vía SSL en el protocolo HTTPS. El método de autenticación utilizado es OAuth 2.0, ya que provee un nivel de seguridad superior, que protege las credenciales y la firma en la comunicación. El método OAuth requiere que antes de cualquier operación al API, se solicite un token de acceso, a través de un ClientId y Secret. El token que se obtiene es utilizado como un Bearer que autentica todas las llamadas subsecuentes. Para más información de OAuth visite https://es.wikipedia.org/wiki/OAuth",
+    "url": "http://localhost:4000/autenticacion",
+    "relUrl": "/autenticacion"
+  },
+  "1": {
+    "id": "1",
+    "title": "Renovar Token",
+    "content": "",
+    "url": "http://localhost:4000/autenticacion/renovar-token/",
+    "relUrl": "/autenticacion/renovar-token/"
+  },
+  "2": {
+    "id": "2",
+    "title": "Solicitar Token",
+    "content": "POST /token Para solicitar un token, debe hacer una solicitud POST con su usuario y contraseña al endpoint https://api.fegora.com/token Request Headers Header Valor Descipción Accept application/json   Content-Type application/x-www-form-urlencoded   Body Header Valor Descipción grant_type password El método de autenticación username {USUARIO} El usuario asignado. Por lo regular será el número de NIT password {CONTRASEÑA} La constraseña asignada client_id apiApp El tipo de client_id. Siempre va este valor Ejemplo de llamada curl -X POST https://api.fegora.com/token -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/x-www-form-urlencoded&#39; -H &#39;Postman-Token: e5eb0e8e-c232-422d-8109-d3b1bf8121a0&#39; -H &#39;cache-control: no-cache&#39; -d &#39;grant_type=password&amp;client_id=apiApp&amp;username=25365421&amp;password={contrasenia}&#39; Response HTTP 200 OK Si recibe este código HTTP de respuesta, se ha autenticado satisfactoriamente. El cuerpo de la respuesta (body) contiene la información siguiente en formato JSON: Descripción de respuesta Nombre Descripción Ejemplo access_token Contine el token que deberá utilizar en todas las llamdas al API, que indican que está correctamente autenticado 7XLOCJyiMAs0ZxX_sUzeoDtcHmdxo3a5cTbkdz5... token_type Tipo de token asignado. En genral será bearer bearer expires_in Indica el tiempo de expiración del token en segundos. Por lo regular este valor será más grande que 86400 (24h). 86400 refresh_token Contine el token que deberá utilizar para solicitar un nuevo token cuando el access_token haya expirado 0dbf0f4d26af41d5b163d3d90f8a1376 Ejemplo de respuesta { &quot;access_token&quot;: &quot;3iaQd3k-vdrSH5-wxy8sVzDEi4YEhLunN...&quot;, &quot;token_type&quot;: &quot;bearer&quot;, &quot;expires_in&quot;: 1799, &quot;refresh_token&quot;: &quot;20811ac42ee3422da6ef0861c3409e8a&quot;, &quot;as:client_id&quot;: &quot;apiApp&quot;, &quot;userName&quot;: &quot;43430775&quot;, &quot;.issued&quot;: &quot;Wed, 06 Mar 2019 14:42:36 GMT&quot;, &quot;.expires&quot;: &quot;Wed, 06 Mar 2019 15:12:36 GMT&quot; } HTTP 400 Bad Request Si recibe este código HTTP de respuesta, NO se ha autenticado satisfactoriamente. El cuerpo de la respuesta (body) contiene la información siguiente en formato JSON: Descripción de respuesta Nombre Descripción Ejemplo error Contine el nombre del error &quot;invalid_clientId&quot; error_description Describe el error con más detalle &quot;Client &#39;xyz&#39; is not registered in the system.&quot; Ejemplo de respuesta { &quot;error&quot;: &quot;invalid_clientId&quot;, &quot;error_description&quot;: &quot;Client &#39;apiAp&#39; is not registered in the system.&quot; }",
+    "url": "http://localhost:4000/autenticacion/solicitar-token/",
+    "relUrl": "/autenticacion/solicitar-token/"
+  }
+  
+}

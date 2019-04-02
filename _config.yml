@@ -1,4 +1,4 @@
-remote_theme: pmarsceill/just-the-docs
+theme: "just-the-docs"
 title: Fegora API
 permalink: pretty
 search_enabled: true
