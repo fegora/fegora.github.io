@@ -1,7 +1,7 @@
 ---
 layout: default
-title: UI Components
+title: Autenticación
 nav_order: 2
 has_children: true
-permalink: /docs/ui-components
+permalink: /autenticacion
 ---
